@@ -1,16 +1,16 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 
 export default function WelcomeScreen() {
   return (
-    <View style={styles.container}>
+    <ScrollView indicatorStyle={"white"} style={styles.container}>
       <Text style={styles.title1}>Welcome to Little Lemon</Text>
       <Text style={styles.title2}>
         Little Lemon is a charming neighborhood bistro that serves simple food
         and classic cocktails in a lively but casual environment. We would love
         to hear more about your experience with us!
       </Text>
-    </View>
+    </ScrollView>
   );
 }
 const styles = StyleSheet.create({
@@ -25,10 +25,9 @@ const styles = StyleSheet.create({
   },
   title2: {
     padding: 20,
-    marginVertical: 8,
 
     color: "white",
     textAlign: "center",
-    fontSize: 18,
+    fontSize: 40,
   },
 });
