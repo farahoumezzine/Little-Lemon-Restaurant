@@ -29,6 +29,9 @@ const menuItemsToDisplay = [
   { name: "Panna Cotta", price: "$5.00", id: "21V" },
 ];
 
+const Separator = ({}) => <View style={styles.Separator}></View>;
+const Header = ({}) => <Text style={styles.textMenu}> View Menu</Text>;
+
 //The renderItem method calls a call-back method which renders another component called Item
 //The Item component is rendered for every item in the array until it reaches the end.
 const Item = ({ name, price }) => (
@@ -52,21 +55,13 @@ const MenuItems = () => {
           backgroundColor: "#495E57",
         }} */}
 
-      <Text
-        style={{
-          color: "white",
-          fontSize: 40,
-          flexWrap: "wrap",
-          paddingHorizontal: 10,
-        }}
-      >
-        View Menu
-      </Text>
       <FlatList
         data={menuItemsToDisplay}
         keyExtractor={(item) => item.id} //keyExtractor being passed to the FlatList component.
         //It instructs the list to use the id of each item as React keys.
         renderItem={renderItem}
+        ItemSeparatorComponent={Separator}
+        ListHeaderComponent={Header}
       />
       {/*  <Text style={{ color: "#F4CE14", fontSize: 36 }}>
           {menuItemsToDisplay[0]}
@@ -76,6 +71,11 @@ const MenuItems = () => {
   );
 };
 const styles = StyleSheet.create({
+  textMenu: {
+    color: "white",
+    fontSize: 40,
+    flexWrap: "wrap",
+  },
   innerContainer: {
     paddingHorizontal: 30,
     paddingVertical: 20,
@@ -86,6 +86,11 @@ const styles = StyleSheet.create({
   itemText: {
     color: "#F4CE14",
     fontSize: 20,
+  },
+  Separator: {
+    borderColor: "white",
+    borderWidth: 0.5,
+    opacity: 0.5,
   },
 });
 export default MenuItems;
