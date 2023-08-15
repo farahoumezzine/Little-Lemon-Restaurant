@@ -67,7 +67,7 @@ const Item = ({ name, price }) => (
 
 const Separator = ({}) => <View style={styles.Separator}></View>;
 
-const MenuItems = () => {
+const MenuItems2 = () => {
   //The renderItem takes an item from the data and renders it into the list.
   const renderItem = ({ item }) => <Item name={item.name} price={item.price} />;
 
@@ -129,4 +129,4 @@ const styles = StyleSheet.create({
     opacity: 0.5,
   },
 });
-export default MenuItems;
+export default MenuItems2;
