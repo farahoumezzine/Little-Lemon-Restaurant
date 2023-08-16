@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TextInput, View } from "react-native";
 
 //import local components here
 import LittleLemonHeader from "./components/LittleLemonHeader";
@@ -9,13 +9,13 @@ import WelcomeScreen from "./components/WelcomeScreen";
 import MenuItemsScrollView from "./components/MenuItemsScrollView";
 import MenuItems2 from "./components/MenuItems2.";
 import MenuItems from "./components/MenuItems";
+import Textinput from "./components/Textinput";
 
 export default function App() {
   return (
     <>
       <View style={styles.container}>
-        <LittleLemonHeader></LittleLemonHeader>
-        <MenuItemsScrollView></MenuItemsScrollView>
+        <Textinput></Textinput>
       </View>
 
       <View style={styles.container2}>

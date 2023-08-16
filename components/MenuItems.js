@@ -1,10 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, ScrollView, FlatList } from "react-native";
 
-/*const menuItemsToDisplay = [
-  "Hummus \n Moutabal \n Falafel \n Marinated Olives \n Kofta \n Eggplant Salad \n Lentil Burger \n Smoked Salmon \n Kofta Burger \n Turkish Kebab \n Fries \n Buttered Rice \n Bread Sticks \n Pita Pocket \n Lentil Soup \n Greek Salad \n Rice Pilaf \n Baklava \n Tartufo \n Tiramisu \n Panna Cotta",
-];*/
-
 const menuItemsToDisplay = [
   { name: "Hummus", price: "$5.00", id: "1A" },
   { name: "Moutabal", price: "$5.00", id: "2B" },
@@ -40,21 +36,11 @@ const Item = ({ name, price }) => (
     <Text style={styles.itemText}>{price}</Text>
   </View>
 );
-
 const MenuItems = () => {
   //The renderItem takes an item from the data and renders it into the list.
   const renderItem = ({ item }) => <Item name={item.name} price={item.price} />;
-
   return (
     <View style={{ flex: 0.75 }}>
-      {/* <ScrollView
-        indicatorStyle={"white"}
-        style={{
-          paddingHorizontal: 40,
-          paddingVertical: 40,
-          backgroundColor: "#495E57",
-        }} */}
-
       <FlatList
         data={menuItemsToDisplay}
         keyExtractor={(item) => item.id} //keyExtractor being passed to the FlatList component.
@@ -63,10 +49,6 @@ const MenuItems = () => {
         ItemSeparatorComponent={Separator}
         ListHeaderComponent={Header}
       />
-      {/*  <Text style={{ color: "#F4CE14", fontSize: 36 }}>
-          {menuItemsToDisplay[0]}
-        </Text>*/}
-      {/* </ScrollView>*/}
     </View>
   );
 };

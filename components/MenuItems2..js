@@ -7,11 +7,6 @@ import {
   FlatList,
   SectionList,
 } from "react-native";
-
-/*const menuItemsToDisplay = [
-  "Hummus \n Moutabal \n Falafel \n Marinated Olives \n Kofta \n Eggplant Salad \n Lentil Burger \n Smoked Salmon \n Kofta Burger \n Turkish Kebab \n Fries \n Buttered Rice \n Bread Sticks \n Pita Pocket \n Lentil Soup \n Greek Salad \n Rice Pilaf \n Baklava \n Tartufo \n Tiramisu \n Panna Cotta",
-];*/
-
 const menuItemsToDisplay = [
   {
     title: "Appetizers",
@@ -77,14 +72,6 @@ const MenuItems2 = () => {
 
   return (
     <View style={{ flex: 0.75 }}>
-      {/* <ScrollView
-        indicatorStyle={"white"}
-        style={{
-          paddingHorizontal: 40,
-          paddingVertical: 40,
-          backgroundColor: "#495E57",
-        }} */}
-
       <SectionList
         keyExtractor={(item, index) => item + index} //It tells the list to use each id as React keys.
         sections={menuItemsToDisplay}
