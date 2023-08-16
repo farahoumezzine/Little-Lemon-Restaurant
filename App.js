@@ -10,12 +10,14 @@ import MenuItemsScrollView from "./components/MenuItemsScrollView";
 import MenuItems2 from "./components/MenuItems2.";
 import MenuItems from "./components/MenuItems";
 import Textinput from "./components/Textinput";
+import LoginScreen from "./components/LoginScreen";
 
 export default function App() {
   return (
     <>
       <View style={styles.container}>
-        <Textinput></Textinput>
+        <LittleLemonHeader></LittleLemonHeader>
+        <MenuItems2></MenuItems2>
       </View>
 
       <View style={styles.container2}>

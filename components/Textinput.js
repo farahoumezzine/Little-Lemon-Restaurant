@@ -1,39 +1,53 @@
 import React, { useState } from "react";
 
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, TextInput, ScrollView } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  ScrollView,
+  KeyboardAvoidingView,
+  Platform,
+} from "react-native";
 
 export default function Textinput() {
   const [firstName, onChangeFirstName] = useState("");
   const [lastName, onChangeLastName] = useState("");
   const [message, onChangeMessage] = useState("");
   return (
-    <ScrollView style={styles.container} keyboardDismissMode="on-drag">
-      <Text style={styles.headerText}>Welcome to Little Lemon</Text>
-      <Text style={styles.regularText}>
-        Little Lemon is a charming neighborhood bistro that serves simple food
-        and classic cocktails in a lively but casual environment. We would love
-        to hear more about your experience with us!
-      </Text>
-      <TextInput
-        style={styles.inputBox}
-        value={firstName}
-        onChangeText={onChangeFirstName}
-        placeholder={"First Name"}
-      />
-      <TextInput
-        style={styles.inputBox}
-        value={lastName}
-        onChangeText={onChangeLastName}
-        placeholder={"Last Name"}
-      />
-      <TextInput
-        style={styles.inputBox}
-        value={message}
-        onChangeText={onChangeMessage}
-        placeholder={"Message"}
-      />
-    </ScrollView>
+    <KeyboardAvoidingView
+      style={styles.container}
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+    >
+      <ScrollView keyboardDismissMode="on-drag">
+        <Text style={styles.headerText}>Welcome to Little Lemon</Text>
+        <Text style={styles.regularText}>
+          Little Lemon is a charming neighborhood bistro that serves simple food
+          and classic cocktails in a lively but casual environment. We would
+          love to hear more about your experience with us!
+        </Text>
+        <TextInput
+          style={styles.inputBox}
+          value={firstName}
+          onChangeText={onChangeFirstName}
+          placeholder={"First Name"}
+        />
+        <TextInput
+          style={styles.inputBox}
+          value={lastName}
+          onChangeText={onChangeLastName}
+          placeholder={"Last Name"}
+        />
+        <TextInput
+          style={styles.inputBox}
+          value={message}
+          onChangeText={onChangeMessage}
+          placeholder={"Message"}
+          multiline={true}
+        />
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 }
 const styles = StyleSheet.create({
