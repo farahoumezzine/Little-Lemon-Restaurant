@@ -1,4 +1,5 @@
 import { StatusBar } from "expo-status-bar";
+import { useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -64,6 +65,9 @@ const Item = ({ name, price }) => (
 const Separator = ({}) => <View style={styles.Separator}></View>;
 
 const MenuItems2 = () => {
+  /************/
+  const [shownMenu, setShowMenu] = useState(false);
+
   //The renderItem takes an item from the data and renders it into the list.
   const renderItem = ({ item }) => <Item name={item.name} price={item.price} />;
 
@@ -73,13 +77,24 @@ const MenuItems2 = () => {
 
   return (
     <View style={{ flex: 0.75 }}>
-      <SectionList
-        keyExtractor={(item, index) => item + index} //It tells the list to use each id as React keys.
-        sections={menuItemsToDisplay}
-        renderItem={renderItem}
-        renderSectionHeader={renderSectionHeader}
-        ItemSeparatorComponent={Separator}
-      />
+      <Pressable
+        style={styles.btn}
+        onPress={() => {
+          /************/
+          setShowMenu(!shownMenu);
+        }}
+      >
+        <Text style={styles.textbtn}> {shownMenu ? "Home" : "View Menu "}</Text>
+      </Pressable>
+      {shownMenu && (
+        <SectionList
+          keyExtractor={(item, index) => item + index} //It tells the list to use each id as React keys.
+          sections={menuItemsToDisplay}
+          renderItem={renderItem}
+          renderSectionHeader={renderSectionHeader}
+          ItemSeparatorComponent={Separator}
+        />
+      )}
     </View>
   );
 };
@@ -115,6 +130,19 @@ const styles = StyleSheet.create({
     borderColor: "white",
     borderWidth: 0.5,
     opacity: 0.5,
+  },
+  btn: {
+    margin: 100,
+    backgroundColor: "#EDEFEE",
+    borderColor: "#EDEFEE",
+    borderWidth: 2,
+    borderRadius: 20,
+    marginVertical: 8,
+  },
+  textbtn: {
+    fontSize: 23,
+    padding: 15,
+    textAlign: "center",
   },
 });
 export default MenuItems2;
