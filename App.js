@@ -11,13 +11,13 @@ import MenuItems2 from "./components/MenuItems2.";
 import MenuItems from "./components/MenuItems";
 import Textinput from "./components/Textinput";
 import LoginScreen from "./components/LoginScreen";
+import Imagefront from "./components/Imagefront";
 
 export default function App() {
   return (
     <>
       <View style={styles.container}>
-        <LittleLemonHeader></LittleLemonHeader>
-        <MenuItems2></MenuItems2>
+        <Imagefront></Imagefront>
       </View>
 
       <View style={styles.container2}>

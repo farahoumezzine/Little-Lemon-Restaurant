@@ -6,7 +6,7 @@ export default function LittleLemonHeader() {
     <View style={styles.container}>
       <Text
         style={{
-          padding: 40,
+          padding: 35,
           fontSize: 20,
           color: "black",
           fontWeight: "500",
