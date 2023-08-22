@@ -12,12 +12,13 @@ import MenuItems from "./components/MenuItems";
 import Textinput from "./components/Textinput";
 import LoginScreen from "./components/LoginScreen";
 import Imagefront from "./components/Imagefront";
+import Exercice from "./components/Exercice";
 
 export default function App() {
   return (
     <>
       <View style={styles.container}>
-        <Imagefront></Imagefront>
+        <Exercice></Exercice>
       </View>
 
       <View style={styles.container2}>
