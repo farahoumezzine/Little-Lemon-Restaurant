@@ -6,10 +6,12 @@ import {
   Text,
   ScrollView,
   useColorScheme,
+  useWindowDimensions,
 } from "react-native";
 
 const Exercice = () => {
   const colorScheme = useColorScheme();
+  const { width, height, fontScale } = useWindowDimensions();
   return (
     <ScrollView
       style={[
@@ -32,6 +34,11 @@ const Exercice = () => {
       <Text style={styles.title}>
         Little Lemon, your local Mediterranean Bistro
       </Text>
+
+      <Text style={styles.regular}>height: {height}</Text>
+      <Text style={styles.regular}>width: {width}</Text>
+      <Text style={styles.regular}>fontScale: {fontScale}</Text>
+
       <ScrollView style={styles.container1}>
         <Image
           style={styles.image2}
