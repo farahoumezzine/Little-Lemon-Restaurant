@@ -1,3 +1,7 @@
+import {
+  useDeviceOrientation,
+  useClipboard,
+} from "@react-native-community/hooks";
 import React from "react";
 import {
   View,
@@ -12,6 +16,11 @@ import {
 const Exercice = () => {
   const colorScheme = useColorScheme();
   const { width, height, fontScale } = useWindowDimensions();
+  const orientation = useDeviceOrientation();
+
+  console.log("is orientation portrait :", orientation.portrait);
+  console.log("is orientation landscape :", orientation.landscape);
+
   return (
     <ScrollView
       style={[
