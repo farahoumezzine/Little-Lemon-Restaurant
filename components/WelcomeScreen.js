@@ -1,19 +1,38 @@
 import { StatusBar } from "expo-status-bar";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View, Image } from "react-native";
 
 export default function WelcomeScreen() {
   return (
     <ScrollView indicatorStyle={"white"} style={styles.container}>
       <Text style={styles.title1}>Welcome to Little Lemon</Text>
-      <Text style={styles.title2}>
-        Little Lemon is a charming neighborhood bistro that serves simple food
-        and classic cocktails in a lively but casual environment. We would love
-        to hear more about your experience with us!
-      </Text>
+      <View style={styles.header}>
+        <Image
+          style={styles.image}
+          source={require("../img/logo.png")}
+          resizeMode="cover"
+        />
+
+        <Text style={styles.title2}>
+          Little Lemon is a charming neighborhood bistro that serves simple food
+          and classic cocktails in a lively but casual environment. We would
+          love to hear more about your experience with us!
+        </Text>
+      </View>
     </ScrollView>
   );
 }
 const styles = StyleSheet.create({
+  header: {
+    flexDirection: "row",
+    justifyContent: "center",
+    margin: 30,
+    padding: 15,
+  },
+  image: {
+    width: 90,
+    height: 90,
+    alignSelf: "center",
+  },
   container: {
     flex: 1,
   },
@@ -28,6 +47,6 @@ const styles = StyleSheet.create({
 
     color: "white",
     textAlign: "center",
-    fontSize: 40,
+    fontSize: 20,
   },
 });
