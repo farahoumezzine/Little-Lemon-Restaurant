@@ -1,7 +1,15 @@
 import { StatusBar } from "expo-status-bar";
-import { ScrollView, StyleSheet, Text, View, Image } from "react-native";
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Button,
+  Pressable,
+} from "react-native";
 
-export default function WelcomeScreen() {
+export default function WelcomeScreen({ navigation }) {
   return (
     <ScrollView indicatorStyle={"white"} style={styles.container}>
       <Text style={styles.title1}>Welcome to Little Lemon</Text>
@@ -18,6 +26,7 @@ export default function WelcomeScreen() {
           love to hear more about your experience with us!
         </Text>
       </View>
+      <Button title="Go to Menu" onPress={() => navigation.navigate("Menu")} />
     </ScrollView>
   );
 }

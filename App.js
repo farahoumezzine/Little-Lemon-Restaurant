@@ -42,7 +42,12 @@ export default function App() {
 
         <Stack.Navigator
           initialRouteName="Welcome"
-          screenOptions={{ headerStyle: { backgroundColor: "#FBDABB" } }}
+          screenOptions={{
+            headerStyle: { backgroundColor: "#FBDABB" },
+            headerTitleStyle: {
+              fontWeight: "bold",
+            },
+          }}
         >
           <Stack.Screen
             name="Welcome"
