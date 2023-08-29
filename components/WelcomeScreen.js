@@ -27,6 +27,10 @@ export default function WelcomeScreen({ navigation }) {
         </Text>
       </View>
       <Button title="Go to Menu" onPress={() => navigation.navigate("Menu")} />
+
+      {/*<Pressable onPress={() => navigation.navigate('Menu')}> 
+        <Text style={styles.buttonText}>View Menu</Text> 
+      </Pressable> */}
     </ScrollView>
   );
 }
